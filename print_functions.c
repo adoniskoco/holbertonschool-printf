@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdarg.h>
-
 /**
 * print_char - print the %c specifier in _printf
 * @args: A va_list containing the argument to print
@@ -38,13 +37,24 @@ int print_string(va_list args)
 
 	return (i);
 }
-
+/**
+* print_int - Handles the %d specifier in _printf
+* @args: A va_list containing the numbers to print
+*
+* Return: The number of numbers printed
+*/
 
 int print_int(va_list args)
 {
 	long int number = (long int)va_arg(args, int);
-	return (print_number(number));
+return (print_number(number));
 }
+/**
+* print_number - Handles the %d specifier in _printf
+* @number: number to be printed
+*
+* Return: number of characters successfully printed
+*/
 
 int print_number(long int number)
 {
@@ -53,7 +63,7 @@ int print_number(long int number)
 	if (number < 0)
 	{
 		_putchar('-');
-		count ++;
+		count++;
 		number = -number;
 	}
 
@@ -62,7 +72,7 @@ int print_number(long int number)
 		count += print_number(number / 10);
 	}
 	_putchar('0' + (number % 10));
-	count ++;
+	count++;
 
 	return (count);
 }

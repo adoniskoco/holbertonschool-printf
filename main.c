@@ -1,10 +1,15 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdef.h>
 
-int main()
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+
+int main(void)
 {
-	_printf("test%stest" , "adonis");
+	_printf("test%stest", "adonis");
 	_printf("test%stest", NULL);
 	_printf("test%ctest", 'A');
 	_printf("test%dtest", 1234);
