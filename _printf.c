@@ -68,6 +68,8 @@ int _printf(const char *format, ...)
 	specifier_t specifiers[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_int},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 
@@ -79,4 +81,6 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	len = process_format(format, args, specifiers);
 	va_end(args);
+
+	return (len);
 }

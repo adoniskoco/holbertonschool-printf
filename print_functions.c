@@ -38,3 +38,31 @@ int print_string(va_list args)
 
 	return (i);
 }
+
+
+int print_int(va_list args)
+{
+	long int number = (long int)va_arg(args, int);
+	return (print_number(number));
+}
+
+int print_number(long int number)
+{
+	int count = 0;
+
+	if (number < 0)
+	{
+		_putchar('-');
+		count ++;
+		number = -number;
+	}
+
+	if (number / 10 != 0)
+	{
+		count += print_number(number / 10);
+	}
+	_putchar('0' + (number % 10));
+	count ++;
+
+	return (count);
+}
